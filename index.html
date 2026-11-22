@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kashi Tax App Download</title>
+<meta name="description" content="Kashi Tax & Business Services ka app. GST, ITR, Loan, Documents aur Online Form.">
+<meta property="og:title" content="Kashi Tax App Download">
+<meta property="og:description" content="GST, ITR, Loan, Documents aur Online Form: sab ek app me.">
+<meta property="og:image" content="icon.png">
+<link rel="icon" href="icon.png">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Devanagari",sans-serif;background:#F3F6FC;color:#1C1E21;min-height:100vh;display:flex;justify-content:center}
+main{width:100%;max-width:440px;padding:28px 20px 40px}
+.head{text-align:center;padding:18px 0 22px}
+.head img{width:92px;height:92px;border-radius:24px;box-shadow:0 10px 28px rgba(8,102,255,.25)}
+h1{font-size:26px;margin-top:14px;color:#0B1F4D}
+.sub{color:#5B6475;font-size:15px;margin-top:4px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:58px;border-radius:29px;background:#0866FF;color:#fff;font-size:18px;font-weight:700;text-decoration:none;border:0;box-shadow:0 10px 24px rgba(8,102,255,.3)}
+.btn:active{transform:scale(.98)}
+.btn.alt{background:#fff;color:#0866FF;border:2px solid #0866FF;box-shadow:none;height:52px;font-size:16px;margin-top:12px}
+.note{font-size:13.5px;color:#5B6475;text-align:center;margin-top:10px}
+.box{background:#fff;border-radius:18px;padding:18px;margin-top:22px;border:1px solid #E1E8F5}
+.box h2{font-size:17px;margin-bottom:12px;color:#0B1F4D}
+ol{padding-left:22px}
+li{margin:8px 0;font-size:15px;line-height:1.5}
+b{color:#0B1F4D}
+.warn{background:#FFF7E6;border-color:#F5D58A}
+#ig{display:none}
+.foot{text-align:center;font-size:13px;color:#8A93A3;margin-top:24px;line-height:1.6}
+</style>
+</head>
+<body>
+<main>
+  <div class="head">
+    <img src="icon.png" alt="Kashi Tax">
+    <h1>Kashi Tax App</h1>
+    <p class="sub">GST · ITR · Loan · Documents · Online Form</p>
+  </div>
+
+  <div id="ig" class="box warn">
+    <h2>Chrome me khul raha hai…</h2>
+    <p style="font-size:15px;line-height:1.5">Agar Chrome apne aap na khule, to upar <b>⋮ (teen dot)</b> dabaiye aur <b>"Open in Chrome / browser"</b> chuniye.</p>
+    <a class="btn alt" id="chromeBtn" href="#">Chrome me kholiye</a>
+  </div>
+
+  <a class="btn" id="dl" href="#">⬇ Download Kashi Tax App</a>
+  <p class="note">Size lagbhag 39 MB · Sirf Android phone ke liye</p>
+
+  <div class="box">
+    <h2>Install kaise karein</h2>
+    <ol>
+      <li>Upar wala <b>Download</b> button dabaiye.</li>
+      <li>Download poora hone par <b>Open</b> dabaiye.</li>
+      <li>Phone pooche to <b>"Allow from this source"</b> on kijiye.</li>
+      <li><b>Install</b> dabaiye.</li>
+      <li><b>Play Protect</b> ka message aaye to <b>More details</b> kholiye, phir <b>Install anyway</b> dabaiye.</li>
+    </ol>
+  </div>
+
+  <div class="box">
+    <h2>"App not installed" aaye to</h2>
+    <ol>
+      <li>Downloads se purani <b>KashiTax.apk</b> delete kijiye.</li>
+      <li>Phone me purana Kashi Tax ho to <b>uninstall</b> kijiye.</li>
+      <li>Is page ko <b>Chrome</b> me kholkar dobara download kijiye.</li>
+    </ol>
+  </div>
+
+  <p class="foot">Kashi Tax &amp; Business Services<br>Jakhania, Ghazipur</p>
+</main>
+<script>
+(function(){
+  var APK='https://nqbxwcrqesxigyhdfsrd.supabase.co/storage/v1/object/public/app/KashiTax.apk';
+  var ua=navigator.userAgent||'';
+  var android=/Android/i.test(ua);
+  var inApp=/Instagram|FBAN|FBAV|FB_IAB|FBIOS|WhatsApp|Snapchat|Line\//i.test(ua);
+  var here=location.host+location.pathname;
+  var intent='intent://'+here+'?go=1#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url='+encodeURIComponent(location.protocol+'//'+here+'?go=1')+';end';
+  document.getElementById('dl').href=APK;
+  document.getElementById('chromeBtn').href=intent;
+  if(android&&inApp){
+    document.getElementById('ig').style.display='block';
+    document.getElementById('dl').href=intent;
+    setTimeout(function(){location.href=intent;},300);
+  } else if(/[?&]go=1/.test(location.search)){
+    setTimeout(function(){location.href=APK;},900);
+  }
+})();
+</script>
+</body>
+</html>
